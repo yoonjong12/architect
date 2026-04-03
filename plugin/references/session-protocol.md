@@ -26,7 +26,29 @@ Delegate codebase exploration to subagents. Present findings as a **concise summ
 | Show only relevant excerpts | Read entire files into context |
 | State what you found AND what it means | List files without interpretation |
 
-## 3. Checkpoint Gates
+## 3. Verify Before Design
+
+When subagent research or exploration feeds into a design decision, **verify the findings before incorporating them**.
+
+### Adversarial Self-Review
+
+For each strategy or finding that enters the design, ask: **"What question from the user would break this?"**
+
+- If you cannot answer, the research is incomplete — go back and investigate
+- If the answer reveals a wrong assumption, fix it before presenting to the user
+- This applies to subagent results, codebase exploration, and your own analysis
+
+### No Vague Strategy
+
+Words like "manual", "careful", "적절히", "as needed" are **not strategies**. They are TODOs disguised as decisions.
+
+A strategy must specify **what** changes, **from where** the change comes, and **where** it goes:
+- Bad: "Manual merge — combine both approaches"
+- Good: "Take main's `_resolve_skills()` (returns `list[SkillRef]`), add our `submit_structured_feedback()` method after line 280. Remove our `_resolve_skill_contents()` — superseded by main's S3 presigned URL approach."
+
+If a strategy cannot be stated concretely, it is an **Open item**, not a Decided item. It must not pass a checkpoint as Decided.
+
+## 4. Checkpoint Gates
 
 After each major section, output:
 
@@ -44,7 +66,7 @@ Wait for user confirmation before proceeding. User may redirect, approve, or rev
 2. Do not proceed to Next until the user decides or explicitly approves deferral
 3. If an Open item is a required input for the next section, it cannot be deferred — resolve it now
 
-## 4. Output Rules
+## 5. Output Rules
 
 Return **exactly** what was requested:
 
@@ -53,7 +75,7 @@ Return **exactly** what was requested:
 - Specific run/result → that exact data (no expansion)
 - Design document → conceptual content (no code unless requested)
 
-## 5. Completion Gate
+## 6. Completion Gate
 
 Before declaring a document complete, verify all applicable checks:
 
@@ -83,3 +105,5 @@ COMPLETION GATE:
 | Skipping E2E walkthrough | Individual roles look consistent but the pipeline has gaps | Trace one concrete example through input → output |
 | Designing a consumer without a producer | A field exists but no data flows — produces an unimplementable design | Trace "who writes this value" in the code for every consumer |
 | Proceeding with Open items | Unresolved decisions propagate as assumptions, causing rework later | Present Open items, get explicit decision or deferral approval before Next |
+| Using subagent results without verification | Superficial strategies that collapse under one question | Apply Adversarial Self-Review (Section 3) before incorporating |
+| "Manual merge" as a strategy | TODO disguised as decision — no concrete action specified | State exactly what changes, from where, and where it goes (Section 3) |

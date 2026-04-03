@@ -18,9 +18,10 @@ Produce a design document through a structured protocol. Output is conceptual �
 1. **Read** `${CLAUDE_PLUGIN_ROOT}/references/session-protocol.md` — follow Session Protocol strictly
 2. **Scope Lock** — establish topic, boundary, exclusions, and output format with user
 3. **Explore** — delegate codebase exploration to subagents, summarize findings
-4. **Draft** — write the design document using the format below
-5. **Checkpoint** — after each major section, present checkpoint and wait for confirmation
-6. **Completion Gate** — verify all applicable checks before finalizing
+4. **Verify** — adversarial self-review of findings; concretize all strategies (no "manual", "careful", "적절히")
+5. **Draft** — write the design document using the format below
+6. **Checkpoint** — after each major section, present checkpoint and wait for confirmation
+7. **Completion Gate** — verify all applicable checks before finalizing
 
 ## Design Document Format
 

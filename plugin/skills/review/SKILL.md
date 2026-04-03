@@ -18,9 +18,10 @@ Produce a review document through a structured protocol. Output is evaluation an
 1. **Read** `${CLAUDE_PLUGIN_ROOT}/references/session-protocol.md` — follow Session Protocol strictly
 2. **Scope Lock** — establish what is being reviewed, boundary, exclusions, and output format
 3. **Explore** — delegate codebase exploration to subagents, summarize findings
-4. **Draft** — write the review document using the format below
-5. **Checkpoint** — after each major section, present checkpoint and wait for confirmation
-6. **Completion Gate** — verify all applicable checks before finalizing
+4. **Verify** — adversarial self-review of findings; concretize all assessments (no "manual", "careful", "적절히")
+5. **Draft** — write the review document using the format below
+6. **Checkpoint** — after each major section, present checkpoint and wait for confirmation
+7. **Completion Gate** — verify all applicable checks before finalizing
 
 ## Review Document Format
 
