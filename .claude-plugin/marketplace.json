@@ -1,0 +1,24 @@
+{
+  "name": "architect",
+  "owner": {
+    "name": "yoonjong12"
+  },
+  "metadata": {
+    "description": "Structured protocol for design documents and architecture reviews — scope lock, checkpoint gates, and completion verification"
+  },
+  "plugins": [
+    {
+      "name": "architect",
+      "source": "./plugin",
+      "description": "Structured protocol for design documents and architecture reviews — scope lock, checkpoint gates, and completion verification",
+      "version": "1.0.0",
+      "author": {
+        "name": "yoonjong12"
+      },
+      "repository": "https://github.com/yoonjong12/architect",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["design", "architecture", "review", "planning"]
+    }
+  ]
+}

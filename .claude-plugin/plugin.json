@@ -1,0 +1,8 @@
+{
+  "name": "architect",
+  "version": "1.0.0",
+  "description": "Structured protocol for design documents and architecture reviews — scope lock, checkpoint gates, and completion verification",
+  "author": {
+    "name": "yoonjong12"
+  }
+}
