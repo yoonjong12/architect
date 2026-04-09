@@ -22,8 +22,9 @@ Both skills follow a shared protocol:
 
 ## Installation
 
-```bash
-claude plugins add yoonjong12/architect
+```
+/plugin marketplace add yoonjong12/architect
+/plugin install architect@architect
 ```
 
 ## Usage
